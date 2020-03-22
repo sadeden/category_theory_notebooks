@@ -27,7 +27,7 @@ class DirectedGraph():
         return dot
 
     def __edges_nodes__(self):
-        return set([node for pair in list(map(lambda edge: list(edge), self.edges)) for node in pair])
+        return set([node for pair in list(map(lambda edge: list(edge)[0:1], self.edges)) for node in pair])
 
     def _repr_svg_(self):
         return self.to_dot()._repr_svg_()
